@@ -1,6 +1,7 @@
 package nl.smallproject.www.conferencedemo.models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Type;
 
 import java.util.List;
 
@@ -14,6 +15,12 @@ public class Speaker {
     private String title;
     private String company;
     private String speaker_bio;
+
+//    needs to be fixed
+//    this was an old option for Lob properties
+//    @Lob
+//    @Type(type = "org.hibernate.type.BinaryType")
+//    private byte[] speaker_photo;
 
     @ManyToMany(mappedBy = "speakers")
     private List<Session> sessions;
@@ -77,5 +84,11 @@ public class Speaker {
         this.sessions = sessions;
     }
 
+    public byte[] getSpeaker_photo() {
+        return speaker_photo;
+    }
 
+    public void setSpeaker_photo(byte[] speaker_photo) {
+        this.speaker_photo = speaker_photo;
+    }
 }
