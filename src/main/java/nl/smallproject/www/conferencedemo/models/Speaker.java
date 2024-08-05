@@ -84,11 +84,11 @@ public class Speaker {
         this.sessions = sessions;
     }
 
-    public byte[] getSpeaker_photo() {
-        return speaker_photo;
-    }
-
-    public void setSpeaker_photo(byte[] speaker_photo) {
-        this.speaker_photo = speaker_photo;
-    }
+//    public byte[] getSpeaker_photo() {
+//        return speaker_photo;
+//    }
+//
+//    public void setSpeaker_photo(byte[] speaker_photo) {
+//        this.speaker_photo = speaker_photo;
+//    }
 }
