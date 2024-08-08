@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/sessions")
-public class SessionController {
+public class SessionsController {
     @Autowired
     private SessionRepository sessionsRepository;
 
@@ -24,7 +24,11 @@ public class SessionController {
     @GetMapping
     @RequestMapping("{id}")
     public Session get(@PathVariable Long id) {
-        return sessionsRepository.getOne(id);
+//        return sessionsRepository.getOne(id);
+        //getOne functionality is already depreciated
+        //getReferenceById seems similar but needs to be tested
+        //seems to work pretty similar
+        return sessionsRepository.getReferenceById(id);
     }
 
 //    returns standard spring status mapping 200
