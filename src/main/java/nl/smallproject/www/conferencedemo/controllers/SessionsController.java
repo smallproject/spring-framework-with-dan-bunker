@@ -12,11 +12,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/sessions")
-public class SessionsController {
+public class SessionController {
     @Autowired
     private SessionRepository sessionsRepository;
-    @Autowired
-    private SessionRepository sessionRepository;
 
     @GetMapping
     public List<Session> list() {
@@ -49,6 +47,6 @@ public class SessionsController {
         //TODO: Add validation that all attributes are passed in, otherwise return a 400 bad payload
         Session existingSession = sessionsRepository.getOne(id);
         BeanUtils.copyProperties(session, existingSession, "session_id");
-        return sessionRepository.saveAndFlush(existingSession);
+        return sessionsRepository.saveAndFlush(existingSession);
     }
 }

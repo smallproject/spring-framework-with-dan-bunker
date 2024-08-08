@@ -1,7 +1,6 @@
 package nl.smallproject.www.conferencedemo.controllers;
 
 import nl.smallproject.www.conferencedemo.models.Speaker;
-import nl.smallproject.www.conferencedemo.repositories.SessionRepository;
 import nl.smallproject.www.conferencedemo.repositories.SpeakerRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,6 @@ import java.util.List;
 public class SpeakerController {
     @Autowired
     private SpeakerRepository speakersRepository;
-    private SessionRepository sessionRepository;
 
     @GetMapping
     public List<Speaker> list() {
