@@ -1,0 +1,3 @@
+#changes server port to 5000
+server:
+  port: 5000
